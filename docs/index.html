@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akademi Ragbi Melaka — Player Database Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="selectionView">
+  <header class="top">
+    <span class="emoji">🏉</span>
+    <h1>AKADEMI RAGBI MELAKA</h1>
+    <p>PLAYER DATABASE PORTAL 2026</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <div class="search-row">
+        <input type="text" id="searchInput" placeholder="Search name or nickname...">
+        <button class="reset" id="resetBtn" title="Reset filters">↺</button>
+      </div>
+
+      <div class="filter-group">
+        <h3>Age Group</h3>
+        <div class="pills" id="ageFilters"></div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Unit</h3>
+        <div class="pills" id="unitFilters"></div>
+      </div>
+    </div>
+
+    <div class="status-row" id="statusRow"></div>
+
+    <div class="grid" id="cardGrid"></div>
+    <div class="empty-state hidden" id="emptyState">No players match your filters.</div>
+  </main>
+
+  <div class="bottom-bar">
+    <div class="stat">
+      <span class="stat-num avail" id="statAvail">0</span>
+      <span class="stat-label">AVAIL</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num sel" id="statSel">0</span>
+      <span class="stat-label">SEL</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num res" id="statRes">0</span>
+      <span class="stat-label">RES</span>
+    </div>
+    <button class="view-summary-btn" id="viewSummaryBtn">View Summary</button>
+  </div>
+</div>
+
+<div id="summaryView" class="hidden">
+  <div class="summary-topbar">
+    <button class="back-link" id="backToSelection">&larr; Back to Selection</button>
+    <button class="reset-all-btn" id="resetAllBtn">Reset All</button>
+  </div>
+
+  <main class="summary-main">
+    <section class="summary-section">
+      <h2 class="summary-h2">Generate Documents</h2>
+      <p class="summary-sub">Fill these in once — they're used across all documents below.</p>
+      <div class="doc-inputs">
+        <input type="text" id="tournamentNameInput" placeholder="Tournament Name">
+        <div class="date-range-row">
+          <input type="date" id="tournamentStartDate">
+          <span class="date-sep">to</span>
+          <input type="date" id="tournamentEndDate">
+        </div>
+        <input type="text" id="tournamentTimeInput" placeholder="Masa (e.g., 8.00 AM)">
+        <input type="text" id="venueInput" placeholder="Venue">
+      </div>
+      <div class="doc-buttons">
+        <button class="doc-btn" id="genSummaryBtn">
+          <span class="doc-num">Document 1</span>
+          <span class="doc-label">Summary Page</span>
+        </button>
+        <button class="doc-btn" id="genParentalBtn">
+          <span class="doc-num">Document 2</span>
+          <span class="doc-label">Kebenaran Ibu Bapa</span>
+        </button>
+        <button class="doc-btn" id="genMediaBtn">
+          <span class="doc-num">Document 3</span>
+          <span class="doc-label">Borang Kebenaran Media</span>
+        </button>
+        <button class="doc-btn" id="genM01Btn" disabled title="Coming later">
+          <span class="doc-num">Document 4</span>
+          <span class="doc-label">M01</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <h2 class="summary-h2">Team Breakdown</h2>
+      <p class="summary-sub">Based on your <strong id="teamCountLabel">0</strong> selected players.</p>
+      <div class="breakdown-grid">
+        <div class="breakdown-card">
+          <h3>By Unit</h3>
+          <div id="unitChart" class="bar-chart"></div>
+        </div>
+        <div class="breakdown-card">
+          <h3>By Form</h3>
+          <div id="formChart" class="bar-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <h2 class="summary-h2">Final Selection List <span class="count-badge" id="finalCountBadge"></span></h2>
+      <p class="summary-sub">Click any IC number to copy it.</p>
+      <div id="finalListAuthGate"></div>
+      <div class="table-wrap">
+        <table class="data-table hidden" id="finalListTable">
+          <thead><tr><th>Full Name</th><th>IC Number</th><th>Class</th></tr></thead>
+          <tbody id="finalListBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="summary-section" id="reservedSection">
+      <h2 class="summary-h2">Reserved / KIV <span class="count-badge" id="reservedCountBadge"></span></h2>
+      <div class="table-wrap">
+        <table class="data-table hidden" id="reservedListTable">
+          <thead><tr><th>Full Name</th><th>IC Number</th><th>Class</th></tr></thead>
+          <tbody id="reservedListBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Detail / auth modal -->
+<div class="overlay hidden" id="overlay">
+  <div class="modal">
+    <button class="close" id="closeModal">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast hidden" id="toast">Copied!</div>
+
+<script src="app.js"></script>
+</body>
+</html>
