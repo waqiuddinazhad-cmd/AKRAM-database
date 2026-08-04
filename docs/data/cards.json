@@ -134,7 +134,7 @@
   {
     "id": "azhaari-bin-hafiza",
     "name": "AZHAARI BIN HAFIZA",
-    "nickname": "ALAI",
+    "nickname": "ALAY",
     "unit": "Forwards",
     "position": "Prop",
     "secondaryPosition": "Locks",
@@ -682,5 +682,41 @@
     "tingkatan": "13 TAHUN / TINGKATAN 1",
     "kelas": "OMEGA",
     "photo": "data/photos/muhammad-hamzah-bin-abdul-malek.jpg"
+  },
+  {
+    "id": "ariel-irfan-bin-hamrie",
+    "name": "ARIEL IRFAN BIN HAMRIE",
+    "nickname": "AREL",
+    "unit": null,
+    "position": null,
+    "secondaryPosition": null,
+    "ageGroup": "15Y",
+    "tingkatan": "15 TAHUN / TINGKATAN 3",
+    "kelas": "DELTA",
+    "photo": "data/photos/ariel-irfan-bin-hamrie.jpg"
+  },
+  {
+    "id": "muhammad-rayyan-mikail-bin-mohd-razmi",
+    "name": "MUHAMMAD RAYYAN MIKAIL BIN MOHD RAZMI",
+    "nickname": "PANJANG",
+    "unit": null,
+    "position": null,
+    "secondaryPosition": null,
+    "ageGroup": "13Y",
+    "tingkatan": "13 TAHUN / TINGKATAN 1",
+    "kelas": "LAMBDA",
+    "photo": "data/photos/muhammad-rayyan-mikail-bin-mohd-razmi.jpg"
+  },
+  {
+    "id": "muhammad-amzar-bin-mohd-zamri",
+    "name": "MUHAMMAD AMZAR BIN MOHD ZAMRI",
+    "nickname": "AMZAR",
+    "unit": null,
+    "position": null,
+    "secondaryPosition": null,
+    "ageGroup": "14Y",
+    "tingkatan": "14 TAHUN / TINGKATAN 2",
+    "kelas": "LAMBDA",
+    "photo": "data/photos/muhammad-amzar-bin-mohd-zamri.jpg"
   }
 ]
